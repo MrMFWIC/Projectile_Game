@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     CanvasManager cm;
+    Rigidbody2D rb;
 
     public float power;
     public float angle;
@@ -12,12 +13,12 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        power = cm.powerInput
+        cm = GetComponent<CanvasManager>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

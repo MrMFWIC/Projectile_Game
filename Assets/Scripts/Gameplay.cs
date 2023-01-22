@@ -5,11 +5,10 @@ using UnityEngine;
 public class Gameplay : MonoBehaviour
 {
     Projectile curProjectile;
+    CanvasManager cm;
 
-    public Projectile projectilePrefab;
+    public Rigidbody2D projectilePrefab;
     public Transform projectileSpawnPoint;
-    public float projectilePower;
-    public float projectileAngle;
 
     public Transform enemySpawnPoint;
     public int enemyCounter = 0;
@@ -21,7 +20,8 @@ public class Gameplay : MonoBehaviour
 
     void Start()
     {
-        
+        curProjectile = GetComponent<Projectile>();
+        cm = GetComponent<CanvasManager>();
     }
 
     void Update()
@@ -59,10 +59,12 @@ public class Gameplay : MonoBehaviour
 
     public void Fire()
     {
-        Projectile curProjectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectileSpawnPoint.transform.eulerAngles = Vector3.forward * cm.angleInputValue;
 
-        curProjectile.power = projectilePower;
-        curProjectile.angle = projectileAngle;
+        Rigidbody2D temp = Instantiate(projectilePrefab, projectileSpawnPoint.transform.position, projectileSpawnPoint.transform.rotation);
+        curProjectile.power = cm.powerInputValue;
+
+        temp.AddRelativeForce(new Vector3(0, cm.powerInputValue, 0));
     }
 
     IEnumerator EnemySpacer()

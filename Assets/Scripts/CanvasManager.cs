@@ -11,8 +11,8 @@ public class CanvasManager : MonoBehaviour
     public InputField angleInput;
     public Button fireButton;
 
-    public float powerInputValue;
-    public float angleInputValue;
+    public int powerInputValue;
+    public int angleInputValue;
 
     void Start()
     {
@@ -22,10 +22,9 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    
     void Update()
     {
-        powerInput.characterValidation = InputField.CharacterValidation.Integer;
-        angleInput.characterValidation = InputField.CharacterValidation.Integer;
+        powerInputValue = int.Parse(powerInput.text);
+        angleInputValue = int.Parse(angleInput.text);
     }
 }
