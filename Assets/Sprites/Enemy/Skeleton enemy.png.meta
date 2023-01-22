@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -543,8 +543,8 @@ TextureImporter:
         y: 207
         width: 37
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -591,9 +591,9 @@ TextureImporter:
       Walk8: 633695180
       Skeleton enemy_3: -1317307463
       Skeleton enemy_45: -102377173
-      Skeleton enemy_47: -805779622
       Walk12: -513683454
       Skeleton enemy_20: -2082895119
+      Skeleton enemy_47: -805779622
       Die8: 844743904
       Skeleton enemy_23: 1424754990
       Die1: -394250004
