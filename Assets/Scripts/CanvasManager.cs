@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Gameplay))]
 public class CanvasManager : MonoBehaviour
 {
     Gameplay game;
@@ -11,20 +12,18 @@ public class CanvasManager : MonoBehaviour
     public InputField angleInput;
     public Button fireButton;
 
-    public int powerInputValue;
-    public int angleInputValue;
-
     void Start()
     {
+        game = GetComponent<Gameplay>();
+
         if (fireButton)
         {
-            fireButton.onClick.AddListener(() => game.Fire());
+            fireButton.onClick.AddListener(() => game.player.TriggerFire());
         }
     }
 
     void Update()
     {
-        powerInputValue = int.Parse(powerInput.text);
-        angleInputValue = int.Parse(angleInput.text);
+       
     }
 }
